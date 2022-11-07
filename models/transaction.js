@@ -1,20 +1,18 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Account extends Model { }
+class Transaction extends Model { }
 
-Account.init(
+Transaction.init(
     {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
         },
         transaction_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            autoIncrement: true,
         },
         date_created: {
             type: DataTypes.DATE,
@@ -58,8 +56,8 @@ Account.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'project',
+        modelName: 'transaction',
     }
 );
 
-module.exports = Project;
+module.exports = Transaction;
