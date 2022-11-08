@@ -37,6 +37,13 @@ Account.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
+    transaction_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'transaction',
+        key: 'transaction_id',
+      },
+    },
   },
   {
     sequelize,

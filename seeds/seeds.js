@@ -1,5 +1,5 @@
-const sequelize = require('./config/connection');
-const { User, Account, Transaction } = require('./models');
+const sequelize = require('../config/connection');
+const { User, Account, Transaction } = require('../models');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });

@@ -5,14 +5,12 @@ class Transaction extends Model { }
 
 Transaction.init(
     {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-        },
+        
         transaction_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            autoIncrement: true,
+            primaryKey: true
         },
         date_created: {
             type: DataTypes.DATE,

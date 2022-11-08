@@ -44,7 +44,7 @@ app.use(session(sess));
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.use(routes);
-sequelize.sync();
+sequelize.sync({ force: true });
 
 app.listen(PORT, () =>
   console.log("app is listening on http://localhost:3001")
