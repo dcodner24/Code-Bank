@@ -5,7 +5,7 @@ const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const helpers = require("./utils/helpers");
-
+const { User, Account, Transaction } = require('./models');
 
 // Set up Handlebars.js engine with custom helpers
 // const helpers = require("./utils/helpers");
@@ -44,6 +44,8 @@ app.use(session(sess));
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.use(routes);
+
+
 sequelize.sync({ force: true });
 
 app.listen(PORT, () =>

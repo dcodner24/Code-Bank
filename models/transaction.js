@@ -21,7 +21,7 @@ Transaction.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                key: 'username',
+                key: 'user_id',
             },
         },
         // Max length warning around notes box needed
@@ -35,19 +35,11 @@ Transaction.init(
             allowNull: false,
         },
 
-        balance: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'account',
-                key: 'acc_balance'
-             },
-
         timestamp: {
             type: Sequelize.DATE,
             allowNull: false
         },
-    }},
+    },
 
     {
         sequelize,

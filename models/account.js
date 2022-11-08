@@ -20,7 +20,7 @@ Account.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'username',
+        key: 'user_id',
       },
     },
     is_checking: {
