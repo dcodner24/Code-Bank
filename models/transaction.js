@@ -5,14 +5,12 @@ class Transaction extends Model { }
 
 Transaction.init(
     {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-        },
+        
         transaction_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            autoIncrement: true,
+            primaryKey: true
         },
         date_created: {
             type: DataTypes.DATE,
@@ -23,7 +21,7 @@ Transaction.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                key: 'username',
+                key: 'user_id',
             },
         },
         // Max length warning around notes box needed
@@ -37,19 +35,11 @@ Transaction.init(
             allowNull: false,
         },
 
-        balance: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'account',
-                key: 'acc_balance'
-             },
-
         timestamp: {
             type: Sequelize.DATE,
             allowNull: false
         },
-    }},
+    },
 
     {
         sequelize,

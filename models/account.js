@@ -20,7 +20,7 @@ Account.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'username',
+        key: 'user_id',
       },
     },
     is_checking: {
@@ -36,6 +36,13 @@ Account.init(
     acc_balance: {
         type: DataTypes.INTEGER,
         allowNull: false,
+    },
+    transaction_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'transaction',
+        key: 'transaction_id',
+      },
     },
   },
   {
