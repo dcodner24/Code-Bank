@@ -10,17 +10,22 @@ const hbs = exphbs.create({
   helpers,
 });
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
 const sess = {
   secret: process.env.DB_SECRET,
-  cookie: {},
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize,
-    checkExpirationInterval: 1000 * 60 * 10, // will check every 10 minutes
-    expiration: 1000 * 60 * 30, // will expire after 30 minutes
-  }),
+    db: sequelize
+  })
 };
+
 
 //create an instance of express
 const app = express();

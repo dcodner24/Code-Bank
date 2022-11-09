@@ -29,7 +29,7 @@ try {
   req.session.save(() => {
     req.session.user_id = userLoginInfo.user_id;
     req.session.email = userLoginInfo.email;
-    req.session.loggedIn = true;
+    req.session.logged_in = true;
   });
     res.status(200).json(userLoginInfo);
 
@@ -49,33 +49,30 @@ try {
     res.status(400).json({message: 'Incorrect email or password, please try again'})
     return
   }
-  const validPassword= await userLoginInfo.checkPassword(req.body.password)
-  
-  if(!validPassword){
-    res.status(400).json({message: 'Incorrect email or password, please try again'})
-    return
-  }
+
   
   req.session.save(() => {
     req.session.user_id = userLoginInfo.user_id;
     req.session.email = userLoginInfo.email;
-    req.session.loggedIn = true;
-   
+    req.session.test="test"
+    req.session.logged_in = true;
+    res.json({ user: userLoginInfo, message: 'You are now logged in!' });
+
   });
   
 } catch (error) {
-  res.status.json(error)
+  res.status(400).json(error)
 }
 });
 
 router.post("/logout", (req, res) => {
-  if (req.session.logged_in) {
+  // if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
     });
-  } else {
-    res.status(404).end();
-  }
+  // } else {
+  //   res.status(404).end();
+  // }
 });
 
 
