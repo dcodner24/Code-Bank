@@ -1,5 +1,6 @@
 const router = require("express").Router();
-router.get("/", (req, res) => {
+const ifLoggedIn= require("../utils/auth")
+router.get("/",ifLoggedIn, (req, res) => {
 
     //if they are already logged redirect to account
   
