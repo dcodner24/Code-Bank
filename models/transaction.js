@@ -22,6 +22,10 @@ Transaction.init(
             type: DataTypes.STRING,
             allowNull: true,
         },
+        payment_destintation: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
 
         amount: {
             type: DataTypes.INTEGER,
