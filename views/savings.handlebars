@@ -1,0 +1,27 @@
+<div>
+{{!-- account balance --}}
+<h1>Account Balance</h1>
+{{#if accounts.is_savings}}
+
+<p> {{accounts.acc_balance}} </p>
+
+{{else}}
+
+<p>No Savings Account</p>
+
+{{/if}}
+
+{{!-- list previous transactions --}}
+
+{{#if transactions.length}}
+<div>
+    <h3>Previous Transactions</h3>
+    {{#each transactions as |transactions|}}
+
+{{#else}}
+</div>
+{{!-- make a payment --}}
+
+{{!-- make a deposit --}}
+
+</div>
