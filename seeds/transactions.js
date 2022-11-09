@@ -4,16 +4,19 @@ const transactionData = [
     {
         notes: 'For last bootcamp payment',
         amount: '4000',
+        payment_destination:"UTA Boot Camp",
         account_id: 1
     },
     {
         notes: 'For last bootcamp payment',
         amount: '4000',
+        payment_destination:"UTA Boot Camp",
         account_id: 3
     },
     {
         notes: 'For last bootcamp payment',
         amount: '4000',
+        payment_destination:"UTA Boot Camp",
         account_id: 2
     },
     {
