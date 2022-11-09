@@ -5,13 +5,13 @@ const router = require("express").Router();
 
 router.post("/", ifLoggedIn, async (req, res) => {
   try {
-    const newAccount= await Account.create({
+    const newAccount = await Account.create({
       ...req.body,
       user_id: req.session.user_id
     })
 
     res.status(200).json(newAccount)
-    
+
   } catch (error) {
     res.status(400).json(error)
   }
@@ -21,11 +21,11 @@ router.get("/:id", (req, res) => {
   res.send("accountid ");
 });
 
-router.delete("/:id",ifLoggedIn, async (req,res)=>{
-  
+router.delete("/:id", ifLoggedIn, async (req, res) => {
+
   try {
-    
-    const accountdata= await Account.destroy({
+
+    const accountdata = await Account.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
@@ -41,20 +41,20 @@ router.delete("/:id",ifLoggedIn, async (req,res)=>{
     res.status(500).json(error);
 
   }
-} )
+})
 
 
-router.get("/",async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-      const accountData= await Account.findAll({
-        
-      })
+    const accountData = await Account.findAll({
 
-      res.status(200).json(accountData);
+    })
+
+    res.status(200).json(accountData);
 
   } catch (error) {
-       res.status(500).json(error);
-  }   
+    res.status(500).json(error);
+  }
 
 })
 module.exports = router;
