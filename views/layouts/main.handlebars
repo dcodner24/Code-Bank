@@ -10,10 +10,11 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <link rel="stylesheet" href="../../public/css/style.css">
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
-    <title>codeBank</title>
+    <title>{{title}}</title>
   </head>
 
   <header>
@@ -53,7 +54,7 @@
     </div>
   </nav>
   <!-- Navbar -->
-
+  
   <!-- Background image -->
   <div
     class="p-5 text-center bg-image"
@@ -68,27 +69,23 @@
 </header>
 
   <body>
-    <p>Main handlebars</p>
 <body>
   <div>
     <header>
-      <h1>
-        <a href="/">Fund My Project!</a>
-      </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/account">profile</a> |
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <a href="/homepage">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main>
+          <main>
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
+        {{/if}}
+      </nav>
+    </header>
+
     <footer>
       
     </footer>

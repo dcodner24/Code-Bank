@@ -5,10 +5,7 @@ const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const helpers = require("./utils/helpers");
-const { User, Account, Transaction } = require('./models');
 
-// Set up Handlebars.js engine with custom helpers
-// const helpers = require("./utils/helpers");
 const hbs = exphbs.create({
   helpers,
 });
@@ -24,12 +21,13 @@ const sess = {
     expiration: 1000 * 60 * 30, // will expire after 30 minutes
   }),
 };
+
+//create an instance of express
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 
-
-
+//  use express sessions with sequelize
 app.use(session(sess));
 
 // Inform Express.js on which template engine to use
@@ -39,15 +37,12 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
-app.use(session(sess));
 
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
 app.use(routes);
 
 
-sequelize.sync({ force: false });
-
-app.listen(PORT, () =>
+sequelize.sync({ force: false }).then(()=>{
+  app.listen(PORT, () =>
   console.log("app is listening on http://localhost:3001")
 );
+});
