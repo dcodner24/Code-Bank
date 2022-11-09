@@ -5,7 +5,7 @@ class Account extends Model {}
 
 Account.init(
   {
-    id: {
+    account_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -36,13 +36,6 @@ Account.init(
     acc_balance: {
         type: DataTypes.INTEGER,
         allowNull: false,
-    },
-    transaction_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'transaction',
-        key: 'transaction_id',
-      },
     },
   },
   {

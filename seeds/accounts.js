@@ -6,22 +6,19 @@ const accountsData = [
         user_id: '1',
         is_checking: 'true',
         is_saving: 'false',
-        acc_balance: '100',
-        transactions: '1', 
+        acc_balance: '100', 
     },
     {
         user_id: '2',
         is_checking: 'true',
         is_saving: 'false',
-        acc_balance: '50',
-        transactions: '2', 
+        acc_balance: '50', 
     },
     {
         user_id: '3',
         is_checking: 'true',
         is_saving: 'false',
-        acc_balance: '200',
-        transactions: '3', 
+        acc_balance: '200', 
     }      
 
 ];

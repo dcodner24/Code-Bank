@@ -7,10 +7,10 @@ const sequelize = require('../config/connection');
 
 
 const seedDatabase = async () => {
-    await sequelize.sync({ force: true });
+    await sequelize.sync({ force: true, alter: true});
     await seedUsers();
     await seedAccounts();
-    // await seedTransactions();
+    await seedTransactions();
     
     process.exit(0);
     };
