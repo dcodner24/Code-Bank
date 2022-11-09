@@ -12,7 +12,7 @@ Account.belongsTo(User, {
 });
 
 Account.hasMany(Transaction, {
-    foreignKey: 'id',
+    foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
