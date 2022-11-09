@@ -12,12 +12,12 @@ Account.belongsTo(User, {
 });
 
 Account.hasMany(Transaction, {
-    foreignKey: 'user_id',
+    foreignKey: 'account_id',
     onDelete: 'CASCADE'
 });
 
 Transaction.belongsTo(Account, {
-    foreignKey: 'id'
+    foreignKey: 'account_id'
 });
 
 module.exports = { User, Account, Transaction };
