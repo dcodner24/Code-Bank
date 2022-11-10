@@ -1,4 +1,3 @@
-let dueDateInputEl = $('#due-date-input');
 
 
 const signupForm = async(event)=>{
@@ -10,13 +9,7 @@ const signupForm = async(event)=>{
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
   const dateOfBirth = document.querySelector('#dateofbirth-signup').value.trim();
-  const dueDate = dueDateInputEl.val().trim();
-
-
-
-  dueDateInputEl.datepicker({ minDate: 1 });
-
-
+  //const dueDate = dueDateInputEl.val().trim();
 
 
   if (username && email && password && dateOfBirth) {

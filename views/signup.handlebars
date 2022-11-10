@@ -14,33 +14,38 @@
 
                                 <div class="form-outline mb-4">
                                     <input type="text" id="username-signup" class="form-control form-control-lg" />
-                                    <label class="form-label" for="form3Example1cg">Username</label>
+                                    <label class="form-label" for="username-signup">Username</label>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <input type="email" id="email-signup" class="form-control form-control-lg" />
-                                    <label class="form-label" for="form3Example3cg">Your Email</label>
+                                    <label class="form-label" for="email-signup">Your Email</label>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <input type="password" id="password-signup" class="form-control form-control-lg" />
-                                    <label class="form-label" for="form3Example4cg">Password</label>
+                                    <label class="form-label" for="password-signup">Password</label>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <input type="password" id="password-signup2" class="form-control form-control-lg" />
-                                    <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                                    <label class="form-label" for="password-signup2">Repeat your password</label>
                                 </div>
                                 <!--Jquery date box for date of birth-->
+                                <script>
+                                    $(function () {
+                                        $("#dateofbirth-signup").datepicker();
+                                    });
+                                </script>
                                 <div class="form-group">
-                                    <label for="due-date-input">Due Date</label>
-                                    <input type="text" min='1' id="due-date-input" class="form-control"
-                                        placeholder="When is the project due?" required />
+                                    <label for="due-date-input">Date Of Birth</label>
+                                    <input type="text" min='1' id="dateofbirth-signup" class="form-control"
+                                        placeholder="Select your date of birth" required />
                                 </div>
 
                                 <div class="form-check d-flex justify-content-center mb-5">
                                     <input class="form-check-input me-2" type="checkbox" value=""
-                                        id="form2Example3cg" />
+                                        id="terms-of-service" />
                                     <label class="form-check-label" for="form2Example3g">
                                         I agree all statements in <a href="#!" class="text-body"><u>Terms of
                                                 service</u></a>
