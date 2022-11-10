@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 });
 
 // use this route to get account information
-router.get('/account/:id', async (req, res) => {
+router.get('/accountdata/:id', async (req, res) => {
   try {
     const accountData = await Account.findByPk(req.params.id, {
       include: [
@@ -37,6 +37,17 @@ router.get('/account/:id', async (req, res) => {
 });
 
 
+
+router.get("/test", (req, res)=>{
+
+  try {
+    res.status(200).json({message:"sadsadasda"})
+
+  } catch (error) {
+     res.status(500).json(error.message)
+  }
+   })
+   
 
 
 
