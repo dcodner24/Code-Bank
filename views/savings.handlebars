@@ -1,32 +1,37 @@
 <div>
 {{!-- account balance --}}
 <h1>Account Balance</h1>
-{{#if accounts.is_savings}}
+    {{#each accounts as |account|}}
 
-<p> {{accounts.acc_balance}} </p>
+{{#if account.is_savings}}
 
+<p> {{account.acc_balance}} </p>
 {{else}}
-
 <p>No Savings Account</p>
 
 {{/if}}
+    {{/each}}
 
 {{!-- list previous transactions --}}
 
 <div>
     <h3>Previous Transactions</h3>
-    {{#if transactions.length}}
     {{#each transactions as |transaction|}}
+    {{#if transaction.amount}}
+
+
     <div>
       {{!-- need transactions.id --}}
-      <p>{{transactions.transaction_id}}</p>
-      <p>{{transactions.amount}}</p>
-      <p>{{transactions.notes}}</p>
-      <p>{{transactions.payment_destination}}</p>
+      <p>{{transaction.transaction_id}}</p>
+      <p>{{transaction.amount}}</p>
+      <p>{{transaction.notes}}</p>
+      <p>{{transaction.payment_destination}}</p>
     </div>
-    {{/each}}
-{{#else}}
+          {{else}}
 <p>No transactions</p>
+
+  {{/if}}
+    {{/each}}
 </div>
 
 {{!-- make a payment --}}

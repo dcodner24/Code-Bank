@@ -1,21 +1,22 @@
-<p>account</p> --}}
 
-{{!-- <div>
-{{#each account}}
+{{#each accounts as |account|}}
 
-{{#if accounts.is_checking}}
+    
+   
+
+{{#if account.is_checking}}
     <div>Checking Account</div>
     <p>Account ID: {{account.account_id}}</p>
-    <p>Current Balance: {{accounts.acc_balance}}</p>
-    
-
-
-{{#if accounts.is_savings}}
+    <p>Current Balance: {{account.acc_balance}}</p>
+{{/if}}
+    {{#if account.is_savings}}
     <div>Savings Account</div>
     <p>Account ID: {{account.account_id}}</p>
-    <p>Current Balance: {{accounts.acc_balance}}</p>
-    {{/each}};
-</div> --}}
+    <p>Current Balance: {{account.acc_balance}}</p>
+    {{/if}}
+
+    {{/each}}; 
+
 
 
 
@@ -30,6 +31,7 @@
     </div>
   </div>
 {{/each}}
+{{{body}}}
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -41,11 +43,17 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Add account</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Create Account</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <label for="">Initial Deposit</label>
+        <input type="text"></input>
+        <label for="">add a checkings?</label>
+        <input type="checkbox"></input>
+        <label for="">add a savings?</label>
+        <input type="checkbox"></input>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
