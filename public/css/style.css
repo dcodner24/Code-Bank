@@ -1,26 +1,34 @@
 :root {
     --cb-green: #548235;
-    --cb-cream: #EFE6DD; 
+    --cb-cream: #EFE6DD;
 }
 
-header{
+header {
     margin-bottom: 100px;
 }
 
-footer{
-    position:fixed;
-    bottom:0;
+footer {
+    position: sticky;
+    bottom: 0;
     width: 100%;
 }
 
-.nav-custom{
+.nav-custom {
     height: 60px;
     margin: 0;
-    padding:0;
+    padding: 0;
     background-color: var(--cb-cream);
 }
 
-.banner-image{
+.banner-image {
     width: 100%;
 }
 
+.navbar-logo {
+    width: 20%;
+
+}
+
+.footer{
+    background-color: var(--cb-green);
+}
