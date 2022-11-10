@@ -1,0 +1,26 @@
+:root {
+    --cb-green: #548235;
+    --cb-cream: #EFE6DD; 
+}
+
+header{
+    margin-bottom: 100px;
+}
+
+footer{
+    position:fixed;
+    bottom:0;
+    width: 100%;
+}
+
+.nav-custom{
+    height: 60px;
+    margin: 0;
+    padding:0;
+    background-color: var(--cb-cream);
+}
+
+.banner-image{
+    width: 100%;
+}
+
