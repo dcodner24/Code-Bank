@@ -1,4 +1,72 @@
-<div>
-    <p>Sign up</p>
-      <p>Sign up</p>  <p>Sign up</p>  <p>Sign up</p>  <p>Sign up</p>  <p>Sign up</p>  <p>Sign up</p>
-</div>
+<!--Sign up bootstrap template-->
+
+<section class="vh-100 bg-image" style="background-color: #EFE6DD">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+                            <form class="signup-form">
+
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="username-signup" class="form-control form-control-lg" />
+                                    <label class="form-label" for="username-signup">Username</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="email-signup" class="form-control form-control-lg" />
+                                    <label class="form-label" for="email-signup">Your Email</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="password-signup" class="form-control form-control-lg" />
+                                    <label class="form-label" for="password-signup">Password</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="password-signup2" class="form-control form-control-lg" />
+                                    <label class="form-label" for="password-signup2">Repeat your password</label>
+                                </div>
+                                <!--Jquery date box for date of birth-->
+                                <div class="form-group">
+                                    <label for="due-date-input">Date Of Birth</label>
+                                    <input type="text" min='1' id="dateofbirth-signup" class="form-control"
+                                        placeholder="Select your date of birth" required />
+                                </div>
+                                <div class="form-check d-flex justify-content-center mb-5">
+                                    <input class="form-check-input me-2" type="checkbox" value=""
+                                        id="terms-of-service" />
+                                    <label class="form-check-label" for="form2Example3g">
+                                        I agree all statements in <a href="#!" class="text-body"><u>Terms of
+                                                service</u></a>
+                                    </label>
+                                </div>
+
+                                <div class="d-flex justify-content-center">
+                                    <button type="button submit"
+                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                                </div>
+
+                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/"
+                                        class="fw-bold text-body"><u>Login here</u></a></p>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script>
+    $(function () {
+        console.log($('#dateofbirth-signup'))
+        $("#dateofbirth-signup").datepicker();
+    });
+</script>
+<script src="/js/signup.js"></script>
