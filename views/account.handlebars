@@ -4,14 +4,22 @@
 
 
 {{#if account.is_checking}}
-<div>Checking Account</div>
-<p>Account ID: {{account.account_id}}</p>
-<p>Current Balance: {{account.acc_balance}}</p>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Checking Account</h5>
+<h6 class="card-subtitle mb-2 text-muted">Account ID: {{account.account_id}}</h6>
+<p class="card-text">Current Balance: {{account.acc_balance}}</p>
+</div>
+</div>
 {{/if}}
 {{#if account.is_savings}}
-<div>Savings Account</div>
-<p>Account ID: {{account.account_id}}</p>
-<p>Current Balance: {{account.acc_balance}}</p>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Savings Account</h5>
+<h6 class="card-subtitle mb-2 text-muted">Account ID: {{account.account_id}}</h6>
+<p class="card-text">Current Balance: {{account.acc_balance}}</p>
+</div>
+</div>
 {{/if}}
 
 {{/each}};
