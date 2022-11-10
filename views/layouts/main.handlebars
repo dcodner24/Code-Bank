@@ -18,34 +18,6 @@
   <title>{{title}}</title>
 </head>
 
-<header>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light nav-custom">
-    <a class="navbar-brand" href="/">
-      <img src="/assets/logo.png" width="321" height="108">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item pr-3">
-          <a class="nav-link" id="logout" href="#">Logout</a>
-        </li>
-      </ul>
-
-    </div>
-  </nav>
-
-  <!-- Navbar -->
-
-  <!-- Background image -->
-  <div class="banner">
-    <img class="banner-image" src="/assets/banner.png" alt="Page banner with quote">
-  </div>
-</header>
 
 <!-- Background image -->
 
@@ -54,24 +26,45 @@
 
 <body>
 
-  <header>
-    <nav>
-      <!-- Conditionally render login or logout links -->
-      {{#if logged_in}}
-      {{!-- load account page --}}
-      {{{ body }}}
-      {{else}}
-      <main>
-        <!-- Render main login page -->
-        {{{ body }}}
-      </main>
-      {{/if}}
-    </nav>
-  </header>
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand justify-content-between nav-custom">
+    <a class="navbar-brand" href="/">
+      <img class="navbar-logo" src="/assets/logo.png">
+    </a>
+    <ul class="navbar-nav p-3">
+      <li class="nav-item">
+        <a class="nav-link" id="logout" href="#">Logout</a>
+      </li>
+    </ul>
+
+  </nav>
+
+
+  <!-- Background image -->
+  <div class="banner">
+    <img class="banner-image" src="/assets/banner.png" alt="Page banner with quote">
+  </div>
+</header>
+
+
+
+  <!-- Conditionally render login or logout links -->
+  {{#if logged_in}}
+  {{!-- load account page --}}
+  {{{ body }}}
+  {{else}}
+  <main>
+    <!-- Render main login page -->
+    {{{ body }}}
+  </main>
+  {{/if}}
+
+
 
   <footer>
     <div
-      class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 mt-4 bg-primary">
+      class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 mt-4 fixed-bottom footer">
       <!-- Copyright -->
       <div class="text-white mb-3 mb-md-0">
         Copyright © 2020. All rights reserved.
