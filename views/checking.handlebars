@@ -1,38 +1,44 @@
-
-
 <div>
-      {{#each accounts as |account|}}
+  {{#each accounts as |account|}}
 
   {{!-- account balance --}}
   {{#if account.is_checking}}
   <h1>Account Balance</h1>
 
   <p> {{account.acc_balance}} </p>
-{{else}}
-    <p>No Checking Account</p>
+  {{else}}
+  <p>No Checking Account</p>
 
   {{/if}}
 
-      {{/each}}
+  {{/each}}
 
   {{!-- list previous transactions --}}
 
 
   <div>
     <h3>Previous Transactions</h3>
+    {{#if transaction}}
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Transaction ID</li>
+      <li class="list-group-item">Amount</li>
+      <li class="list-group-item">Notes</li>
+      <li class="list-group-item">Payment Destination</li>
+    {{/if}}
       {{#each transactions as |transaction|}}
-        {{#if transaction.amount}}
+      {{#if transaction.amount}}
 
       <div>
         {{!-- need transactions.id --}}
-        <p>{{transaction.transaction_id}}</p>
-        <p>{{transaction.amount}}</p>
-        <p>{{transaction.notes}}</p>
-        <p>{{transaction.payment_destination}}</p>
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item">{{transaction.transaction_id}}</li>
+          <li class="list-group-item">{{transaction.amount}}</li>
+          <li class="list-group-item">{{transaction.notes}}</li>
+          <li class="list-group-item">{{transaction.payment_destination}} </li>
       </div>
       {{else}}
-    <p>No transactions</p>
-  {{/if}}
+      <p>No transactions</p>
+      {{/if}}
 
       {{/each}}
 
