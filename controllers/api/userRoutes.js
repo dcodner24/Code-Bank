@@ -54,7 +54,6 @@ try {
   req.session.save(() => {
     req.session.user_id = userLoginInfo.user_id;
     req.session.email = userLoginInfo.email;
-    req.session.test="test"
     req.session.logged_in = true;
     res.json({ user: userLoginInfo, message: 'You are now logged in!' });
 
