@@ -1,5 +1,4 @@
 
-
 const signupForm = async(event)=>{
     event.preventDefault();
 
@@ -11,7 +10,6 @@ const signupForm = async(event)=>{
   const dateOfBirth = document.querySelector('#dateofbirth-signup').value.trim();
   //const dueDate = dueDateInputEl.val().trim();
 
-
   if (username && email && password && dateOfBirth) {
     // Send a POST request to the API endpoint
     const response = await fetch('/api/users/signup', {
@@ -19,10 +17,9 @@ const signupForm = async(event)=>{
       body: JSON.stringify({ username, email, password, dateOfBirth }),
       headers: { 'Content-Type': 'application/json' },
     });
-console.log(response)
     if (response.ok) {
       // If successful, redirect the browser to the account page
-      document.location.replace('/account');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }

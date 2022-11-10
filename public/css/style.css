@@ -24,3 +24,7 @@ footer{
     width: 100%;
 }
 
+.background-color{
+    background-color: --cb-cream;
+}
+

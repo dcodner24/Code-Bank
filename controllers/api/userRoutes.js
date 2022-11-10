@@ -25,6 +25,7 @@ router.get("/:id", (req, res) => {
 router.post("/signup", async(req, res)=>{
 try {
   const userLoginInfo= await User.create(req.body)
+  console.log(userLoginInfo);
 
   req.session.save(() => {
     req.session.user_id = userLoginInfo.user_id;

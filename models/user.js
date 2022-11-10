@@ -39,7 +39,7 @@ User.init(
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            // LOOK AT VALIDATION - REFER TO JQUERY
+            // no need to validate,already done qith jquery widget
         },
     }
   },
