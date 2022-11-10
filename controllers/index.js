@@ -2,9 +2,10 @@ const router = require("express").Router();
 
 const loginRoutes= require("./loginRoutes")
 const apiRoutes = require("./api");
-const accountRoutes= require("./accountRoutes")
+const accounthbs= require("./accounthbs")
+
 router.use("/api", apiRoutes);
 router.use("/", loginRoutes);
-router.use("/account", accountRoutes)
+router.use("/account", accounthbs);
 
 module.exports = router;
