@@ -12,7 +12,7 @@ router.get("/",ifLoggedIn, async (req, res) => {
   
       const users = accountData.map((project) => project.get({ plain: true }));
  console.log(req.session)
-      res.render("accountDetails",{
+      res.render("account",{
         // layout: 'dashboard',
         users,
         // Pass the logged in flag to the template
