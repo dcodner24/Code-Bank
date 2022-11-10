@@ -1,1 +1,19 @@
-<p>account</p>
+{{!-- <p>account</p> --}}
+
+<div>
+{{#each account}}
+
+{{#if accounts.is_checking}}
+    <div>Checking Account</div>
+    <p>Account ID: {{account.account_id}}</p>
+    <p>Current Balance: {{accounts.acc_balance}}</p>
+    
+
+{{#if accounts.is_savings}}
+    <div>Savings Account</div>
+    <p>Account ID: {{account.account_id}}</p>
+    <p>Current Balance: {{accounts.acc_balance}}</p>
+    {{/each}};
+</div>
+
+<button type="button" class="btn btn-primary">Add Account</button>
