@@ -13,12 +13,20 @@
 
 {{!-- list previous transactions --}}
 
-{{#if transactions.length}}
 <div>
     <h3>Previous Transactions</h3>
-    {{#each transactions as |transactions|}}
-
+    {{#if transactions.length}}
+    {{#each transactions as |transaction|}}
+    <div>
+      {{!-- need transactions.id --}}
+      <p>{{transactions.id}}</p>
+      <p>{{transactions.amount}}</p>
+      <p>{{transactions.notes}}</p>
+      <p>{{transactions.payment_destination}}</p>
+    </div>
+    {{/each}}
 {{#else}}
+<p>No transactions</p>
 </div>
 
 {{!-- make a payment --}}

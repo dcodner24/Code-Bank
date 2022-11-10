@@ -1,63 +1,73 @@
 <div>
-{{!-- account balance --}}
-<h1>Account Balance</h1>
-{{#if accounts.is_checking}}
+  {{!-- account balance --}}
+  <h1>Account Balance</h1>
+  {{#if accounts.is_checking}}
 
-<p> {{accounts.acc_balance}} </p>
+  <p> {{accounts.acc_balance}} </p>
 
-{{else}}
+  {{else}}
 
-<p>No Checking Account</p>
+  <p>No Checking Account</p>
 
-{{/if}}
+  {{/if}}
 
-{{!-- list previous transactions --}}
+  {{!-- list previous transactions --}}
 
-{{#if transactions.length}}
-<div>
+
+  <div>
     <h3>Previous Transactions</h3>
-    {{#each transactions as |transactions|}}
-
-{{#else}}
-</div>
-
-{{!-- make a payment --}}
-
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Payment Amount</label>
-    <input type="text" class="form-control" placeholder="Amount">
+    {{#if transactions.length}}
+      {{#each transactions as |transaction|}}
+      <div>
+        {{!-- need transactions.id --}}
+        <p>{{transactions.id}}</p>
+        <p>{{transactions.amount}}</p>
+        <p>{{transactions.notes}}</p>
+        <p>{{transactions.payment_destination}}</p>
+      </div>
+      {{/each}}
+    {{#else}}
+    <p>No transactions</p>
+    {{/if}}
   </div>
 
-  <div class="form-group">
-    <label for="exampleFormControlSelect2">Choose Payment Destination</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2">
-      <option>Transfer to My Accounts</option>
-      <option>Transfer to Another User</option>
-    </select>
-  </div>
+  {{!-- make a payment --}}
 
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Payment Notes</label>
-    <input type="text" class="form-control" placeholder="Notes">
-  </div>
-</form>
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Payment Amount</label>
+      <input type="text" class="form-control" placeholder="Amount">
+    </div>
 
-<button type="button" class="btn btn-primary">Make Transaction</button>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Choose Payment Destination</label>
+      <select multiple class="form-control" id="exampleFormControlSelect2">
+        <option>Transfer to My Accounts</option>
+        <option>Transfer to Another User</option>
+      </select>
+    </div>
 
-{{!-- make a deposit --}}
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Payment Notes</label>
+      <input type="text" class="form-control" placeholder="Notes">
+    </div>
+  </form>
 
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Deposit Amount</label>
-    <input type="text" class="form-control" placeholder="Amount">
-  </div>
+  <button type="button" class="btn btn-primary">Make Transaction</button>
 
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Deposit Notes</label>
-    <input type="text" class="form-control" placeholder="Notes">
-  </div>
-</form>
+  {{!-- make a deposit --}}
+
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Deposit Amount</label>
+      <input type="text" class="form-control" placeholder="Amount">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Deposit Notes</label>
+      <input type="text" class="form-control" placeholder="Notes">
+    </div>
+  </form>
 
 </div>
 
