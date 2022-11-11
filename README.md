@@ -21,7 +21,7 @@ To use Code Bank you will first need to create an account, which is available on
 
 [Repo](https://github.com/dcodner24/Code-Bank "Code Bank Repo")
 
-[Live](https://code-bank-bc.herokuapp.com/ "Deployed Site")
+[Live Site](https://code-bank-bc.herokuapp.com/ "Deployed Site")
 
 ## Built With
 
