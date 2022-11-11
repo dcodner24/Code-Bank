@@ -23,6 +23,20 @@ footer {
     
 }
 
+.list-group-item {
+    width: 100px;
+
+}
+
+.account-info {
+    
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%
+
+}
+
 .nav-custom {
     height: 60px;
     margin: 0;

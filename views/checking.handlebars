@@ -5,8 +5,8 @@
   <h1>Account Balance</h1>
 
   <p> {{account.acc_balance}} </p>
-  {{else}}
-  <p>No Checking Account</p>
+  {{!-- {{else}}
+  <p>No Checking Account</p> --}}
   {{/if}}
   {{/each}}
 
@@ -39,8 +39,9 @@
       {{/each}}
   </div>
   
-  {{!-- make a payment
+{{!-- make a payment --}}
 
+<div class="transaction-form">
   <form>
     <div class="form-group">
       <label for="exampleFormControlInput1">Payment Amount</label>
@@ -78,5 +79,5 @@
   </form>
 
 </div>
-
+</div>
 <button type="button" class="btn btn-primary">Make Transaction</button>
