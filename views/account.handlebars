@@ -37,24 +37,6 @@
   {{/if}}
   {{/each}}
 </div>
-{{!-- Just added this, might be a better look (TONY) --}}
-
-
-
-{{!--
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-{{#each users as |user|}}
-<div class="row align-center mb-5">
-  <div class="col-md-6">
-    <h2>{{user.username}}</h2>
-    <h2>{{user.email}}</h2>
-    <h2>{{user.dateOfBirth}}</h2>
-  </div>
-</div>
-{{/each}}
-{{{body}}} --}}
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
@@ -70,12 +52,15 @@
         <h5 class="modal-title" id="staticBackdropLabel">Create Account</h5>
       </div>
       <div class="modal-body">
-        <label for="">Initial Deposit</label>
+        <label for="">Initial Deposit: </label>
         <input type="text"></input>
-        <label for="">Checking</label>
+        <label for="">Checking: </label>
         <input type="checkbox"></input>
-        <label for="">Savings</label>
+        <label for="">Savings: </label>
         <input type="checkbox"></input>
+
+        </form>
+      
 
       </div>
       <div class="modal-footer">
@@ -86,5 +71,4 @@
   </div>
 </div>
 
-
-  <script src="/js/account.js"></script>
+<script src="/js/account.js"></script>

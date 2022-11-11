@@ -36,46 +36,25 @@
       {{/if}}
       {{/each}}
   </div>
-  
-{{!-- make a payment --}}
 
 <div class="transaction-form">
   <form>
     <div class="form-group">
       <label for="exampleFormControlInput1">Payment Amount</label>
-      <input type="text" class="form-control" placeholder="Amount">
+      <input type="text" class="form-control" id="t-notes" placeholder="Amount">
     </div>
 
     <div class="form-group">
-      <label for="exampleFormControlSelect2">Choose Payment Destination</label>
-      <select multiple class="form-control" id="exampleFormControlSelect2">
-        <option>Transfer to My Accounts</option>
-        <option>Transfer to Another User</option>
-      </select>
+      <label for="exampleFormControlInput1">Payment Distinations</label>
+      <input type="text" class="form-control"  id="t-destination" placeholder="Payment Destination">
     </div>
 
     <div class="form-group">
       <label for="exampleFormControlInput1">Payment Notes</label>
-      <input type="text" class="form-control" placeholder="Notes">
+      <input type="text" class="form-control" id="t-amount" placeholder="Notes">
     </div>
+    <button type="button submit" class="btn btn-primary">Make Transaction</button>
+
   </form>
-
-  <button type="button" class="btn btn-primary">Make Transaction</button>
-
-  {{!-- make a deposit --}}
-
-  <form>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Deposit Amount</label>
-      <input type="text" class="form-control" placeholder="Amount">
-    </div>
-
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Deposit Notes</label>
-      <input type="text" class="form-control" placeholder="Notes">
-    </div>
-  </form>
-
-</div>
 </div>
 <button type="button" class="btn btn-primary">Make Transaction</button>
