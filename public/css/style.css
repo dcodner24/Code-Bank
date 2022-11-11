@@ -11,13 +11,17 @@ body{
     background-color: var(--cb-cream);
 }
 
-
-
-.transaction-form {
-    max-width: 500px;
-    
+.banner-image {
+    width: 100%;
 }
 
+.footer{
+    background-color: var(--cb-green);
+}
+
+.logoutb{
+    display: none
+}
 
 .nav-custom {
     height: 60px;
@@ -26,22 +30,14 @@ body{
     background-color: var(--cb-cream);
 }
 
-.banner-image {
-    width: 100%;
-}
-
 .navbar-logo {
     width: 20%;
 
 }
 
-.footer{
-    background-color: var(--cb-green);
-}
-
-
-.logoutb{
-    display: none
+.transaction-form {
+    max-width: 500px;
+    
 }
 
 #checking:hover, #savings:hover{

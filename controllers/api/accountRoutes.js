@@ -47,7 +47,7 @@ router.delete("/:id", ifLoggedIn, async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const accountData = await Account.findAll({
-
+  
     })
 
     res.status(200).json(accountData);
