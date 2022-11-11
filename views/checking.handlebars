@@ -1,6 +1,5 @@
 <div>
   {{#each accounts as |account|}}
-
   {{!-- account balance --}}
   {{#if account.is_checking}}
   <h1>Account Balance</h1>
@@ -15,8 +14,8 @@
 
   {{!-- list previous transactions --}}
 
-
   <div>
+    {{!-- creates row headers --}}
     <h3>Previous Transactions</h3>
     {{#if transaction}}
     <ul class="list-group list-group-horizontal">
@@ -24,12 +23,13 @@
       <li class="list-group-item">Amount</li>
       <li class="list-group-item">Notes</li>
       <li class="list-group-item">Payment Destination</li>
-    {{/if}}
+      {{/if}}
+
       {{#each transactions as |transaction|}}
       {{#if transaction.amount}}
 
       <div>
-        {{!-- need transactions.id --}}
+        
         <ul class="list-group list-group-horizontal">
           <li class="list-group-item">{{transaction.transaction_id}}</li>
           <li class="list-group-item">{{transaction.amount}}</li>
@@ -39,9 +39,7 @@
       {{else}}
       <p>No transactions</p>
       {{/if}}
-
       {{/each}}
-
   </div>
   {{!-- make a payment
 
