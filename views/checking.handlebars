@@ -1,19 +1,18 @@
-<div>
+<div class="transactions">
   {{#each accounts as |account|}}
   {{!-- account balance --}}
   {{#if account.is_checking}}
   <h1>Account Balance</h1>
 
   <p> {{account.acc_balance}} </p>
-  {{else}}
-  <p>No Checking Account</p>
-
+  {{!-- {{else}}
+  <p>No Checking Account</p> --}}
   {{/if}}
-
   {{/each}}
 
   {{!-- list previous transactions --}}
 
+<div class="transactions">
   <div>
     {{!-- creates row headers --}}
     <h3>Previous Transactions</h3>
@@ -28,8 +27,6 @@
       {{#each transactions as |transaction|}}
       {{#if transaction.amount}}
 
-      <div>
-        
         <ul class="list-group list-group-horizontal">
           <li class="list-group-item">{{transaction.transaction_id}}</li>
           <li class="list-group-item">{{transaction.amount}}</li>
@@ -41,8 +38,10 @@
       {{/if}}
       {{/each}}
   </div>
-  {{!-- make a payment --}}
+  
+{{!-- make a payment --}}
 
+<div class="transaction-form">
   <form>
     <div class="form-group">
       <label for="exampleFormControlInput1">Payment Amount</label>
@@ -80,5 +79,5 @@
   </form>
 
 </div>
-
+</div>
 <button type="button" class="btn btn-primary">Make Transaction</button>
