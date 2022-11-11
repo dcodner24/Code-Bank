@@ -1,9 +1,4 @@
 
-
-
-
-
-
 console.log("account")
 
 const  transactionForm =async (e)=>{
@@ -33,9 +28,6 @@ if (notes && destination && amount) {
 }
 
 
-
-
-
 document.querySelector(".transaction-form").addEventListener("submit", transactionForm )
 
 function test(){
@@ -44,3 +36,15 @@ function test(){
    }
  
 addEventListener('load', test);
+
+const checking = async () => {
+    document.location.replace('/checking');
+};
+
+const savings = async () => {
+    document.location.replace('/savings');
+};
+
+
+document.querySelector('#checking').addEventListener('click', checking);
+document.querySelector('#savings').addEventListener('click', savings);

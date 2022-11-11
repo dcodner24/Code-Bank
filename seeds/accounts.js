@@ -12,8 +12,15 @@ const accountsData = [
         user_id: '2',
         is_checking: 'true',
         is_saving: 'false',
-        acc_balance: '50', 
+        acc_balance: '50.00', 
     },
+    {
+        user_id: '2',
+        is_checking: 'false',
+        is_savings: 'true',
+        acc_balance: '50000.00', 
+    },
+
     {
         user_id: '3',
         is_checking: 'true',

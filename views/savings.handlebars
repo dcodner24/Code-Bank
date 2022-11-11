@@ -5,8 +5,8 @@
   <h1>Account Balance</h1>
 
   <p> {{account.acc_balance}} </p>
-  {{else}}
-  <p>No Savings Account</p>
+  {{!-- {{else}}
+  <p>No Savings Account</p> --}}
 
   {{/if}}
 
@@ -14,6 +14,7 @@
 
   {{!-- list previous transactions --}}
 
+<div class="transactions">
   <div>
     {{!-- creates row headers --}}
     <h3>Previous Transactions</h3>
@@ -27,9 +28,9 @@
 
       {{#each transactions as |transaction|}}
       {{#if transaction.amount}}
-
-
+      
       <div>
+        <ul class="list-group list-group-horizontal"></ul>
         <li class="list-group-item">{{transaction.transaction_id}}</li>
         <li class="list-group-item">{{transaction.amount}}</li>
         <li class="list-group-item">{{transaction.notes}}</li>
@@ -40,9 +41,11 @@
       {{/if}}
       {{/each}}
   </div>
+</div>
 
   {{!-- make a payment --}}
 
+<div class="transaction-form">
   <form>
     <div class="form-group">
       <label for="exampleFormControlInput1">Payment Amount</label>
@@ -77,4 +80,5 @@
     </div>
   </form>
 
+</div>
 </div>

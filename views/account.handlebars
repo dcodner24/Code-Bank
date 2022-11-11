@@ -1,27 +1,5 @@
-{{!-- Checking and Savings cards --}}
-{{#each accounts as |account|}}
-{{#if account.is_checking}}
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Checking Account</h5>
-<h6 class="card-subtitle mb-2 text-muted">Account ID: {{account.account_id}}</h6>
-<p class="card-text">Current Balance: ${{account.acc_balance}}</p>
-</div>
-</div>
-{{/if}}
-{{#if account.is_savings}}
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Savings Account</h5>
-<h6 class="card-subtitle mb-2 text-muted">Account ID: {{account.account_id}}</h6>
-<p class="card-text">Current Balance: ${{account.acc_balance}}</p>
-</div>
-</div>
-{{/if}}
-{{/each}};
-
-{{!-- Just added this, might be a better look (TONY) --}}
-{{!-- <div class="card" style="width: 40rem;">
+{{#each users as |user|}}
+<div class="card" style="width: 40rem;">
   <div class="card-header">
     Account Overview
   </div>
@@ -30,35 +8,48 @@
     <li class="list-group-item">Email: {{user.email}}</li>
     <li class="list-group-item">Date of Birth: {{user.dateOfBirth}}</li>
   </ul>
-</div> --}}
-
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-{{#each users as |user|}}
-<div class="row align-center mb-5">
-  <div class="col-md-6">
-    <h2>{{user.username}}</h2>
-    <h2>{{user.email}}</h2>
-    <h2>{{user.dateOfBirth}}</h2>
-  </div>
 </div>
 {{/each}}
-{{{body}}}
+
+{{!-- Checking and Savings cards --}}
+<div class="account-info">
+  {{#each accounts as |account|}}
+  {{#if account.is_checking}}
+  <div class="card" id="checking" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Checking Account</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Account ID: {{account.account_id}}</h6>
+      <p class="card-text">Current Balance: {{account.acc_balance}}</p>
+    </div>
+  </div>
+  {{/if}}
+</div>
+
+<div class="account-info">
+  {{#if account.is_savings}}
+  <div class="card" id='savings' style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Savings Account</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Account ID: {{account.account_id}}</h6>
+      <p class="card-text">Current Balance: {{account.acc_balance}}</p>
+    </div>
+  </div>
+  {{/if}}
+  {{/each}}
+</div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
   Add Account
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Create Account</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <label for="">Initial Deposit: </label>
@@ -73,15 +64,11 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Create Account</button>
       </div>
     </div>
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    <script src="/js/account.js"></script>
+<script src="/js/account.js"></script>
