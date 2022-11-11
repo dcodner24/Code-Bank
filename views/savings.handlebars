@@ -1,10 +1,11 @@
-<div>
+<div class="transactions d-flex flex-column flex-lg-row justify-content-around mx-3">
   {{#each accounts as |account|}}
   {{!-- account balance --}}
   {{#if account.is_savings}}
-  <h1>Account Balance</h1>
-
-  <p> {{account.acc_balance}} </p>
+  <div>
+  <h3>Account Balance</h3>
+  <h3>${{account.acc_balance}}</h3>
+  </div>
   {{!-- {{else}}
   <p>No Savings Account</p> --}}
 
@@ -14,71 +15,55 @@
 
   {{!-- list previous transactions --}}
 
-<div class="transactions">
-  <div>
+ <div class="mx-2">
     {{!-- creates row headers --}}
     <h3>Previous Transactions</h3>
-    {{#if transaction}}
+
     <ul class="list-group list-group-horizontal">
-      <li class="list-group-item">Transaction ID</li>
-      <li class="list-group-item">Amount</li>
-      <li class="list-group-item">Notes</li>
-      <li class="list-group-item">Payment Destination</li>
-      {{/if}}
+      <li class="list-group-item flex-fill">Transaction ID</li>
+      <li class="list-group-item flex-fill">Amount</li>
+      <li class="list-group-item flex-fill">Notes</li>
+      <li class="list-group-item flex-fill">Payment Destination</li>
+    </ul>
 
-      {{#each transactions as |transaction|}}
-      {{#if transaction.amount}}
-      
-      <div>
-        <ul class="list-group list-group-horizontal"></ul>
-        <li class="list-group-item">{{transaction.transaction_id}}</li>
-        <li class="list-group-item">{{transaction.amount}}</li>
-        <li class="list-group-item">{{transaction.notes}}</li>
-        <li class="list-group-item">{{transaction.payment_destination}} </li>
-      </div>
-      {{else}}
-      <p>No transactions</p>
-      {{/if}}
-      {{/each}}
   </div>
-</div>
 
-  {{!-- make a payment --}}
+  <div class="mx-2">
+    <form class="mb-2">
+      <h2>Make A Payment</h2>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Payment Amount</label>
+        <input type="text" class="form-control" placeholder="Amount">
+      </div>
 
-<div class="transaction-form">
-  <form>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Payment Amount</label>
-      <input type="text" class="form-control" placeholder="Amount">
-    </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Choose Payment Destination</label>
+        <select multiple class="form-control" id="exampleFormControlSelect2">
+          <option>Transfer to My Accounts</option>
+          <option>Transfer to Another User</option>
+        </select>
+      </div>
 
-    <div class="form-group">
-      <label for="exampleFormControlSelect2">Choose Payment Destination</label>
-      <select multiple class="form-control" id="exampleFormControlSelect2">
-        <option>Transfer to My Accounts</option>
-        <option>Transfer to Another User</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Payment Notes</label>
-      <input type="text" class="form-control" placeholder="Notes">
-    </div>
-  </form>
-
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Payment Notes</label>
+        <input type="text" class="form-control" placeholder="Notes">
+      </div>
+      <button type="submit" class="btn btn-primary">Make Payment</button>
+    </form>
+  </div>
   {{!-- make a deposit --}}
+  <div class="mx-2">
+    <form>
+      <h2>Make A Deposit</h2>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Deposit Amount</label>
+        <input type="text" class="form-control" placeholder="Amount">
+      </div>
 
-  <form>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Deposit Amount</label>
-      <input type="text" class="form-control" placeholder="Amount">
-    </div>
-
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Deposit Notes</label>
-      <input type="text" class="form-control" placeholder="Notes">
-    </div>
-  </form>
-
-</div>
-</div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Deposit Notes</label>
+        <input type="text" class="form-control" placeholder="Notes">
+      </div>
+      <button type="submit" class="btn btn-primary">Make Deposit</button>
+    </form>
+  </div>

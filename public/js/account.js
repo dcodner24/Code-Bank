@@ -20,6 +20,7 @@ const savings = async (e) => {
     document.location.replace('/savings');
 };
 
+
 const createAccount = async (e) =>{
   e.preventDefault();
   const acc_balance = document.querySelector('#deposit').value.trim();
@@ -47,5 +48,13 @@ console.log(response)
 
 
 document.querySelector('.create-account').addEventListener('submit',createAccount);
-document.querySelector('#checking').addEventListener('click', checking);
-document.querySelector('#savings').addEventListener('click', savings);
+
+
+if(document.querySelector('#checking')){
+    document.querySelector('#checking').addEventListener('click', checking)
+};
+
+if(document.querySelector('#savings')){
+    document.querySelector('#savings').addEventListener('click', savings)
+};
+
