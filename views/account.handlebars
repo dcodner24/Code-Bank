@@ -51,24 +51,25 @@
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Create Account</h5>
       </div>
-      <div class="modal-body">
-        <label for="">Initial Deposit: </label>
-        <input type="text"></input>
-        <label for="">Checking: </label>
-        <input type="checkbox"></input>
-        <label for="">Savings: </label>
-        <input type="checkbox"></input>
+      <form class ='create-account'>
+        <div class="modal-body">
+          <label for="">Initial Deposit: </label>
+          <input id='deposit' type="text"></input>
+          <label for="">Checking: </label>
+          <input id='isChecking' type="checkbox"></input>
+          <label for="">Savings: </label>
+          <input id='isSavings' type="checkbox"></input>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="create-account" type="submit" class="btn btn-primary">Create Account</button>
+          </div>
 
-        </form>
-      
+      </form>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Create Account</button>
-      </div>
+
     </div>
   </div>
+</div>
 </div>
 
 <script src="/js/account.js"></script>
