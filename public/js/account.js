@@ -28,14 +28,15 @@ if (notes && destination && amount) {
 }
 
 
-document.querySelector(".transaction-form").addEventListener("submit", transactionForm )
+// document.querySelector(".transaction-form").addEventListener("submit", transactionForm )
 
 function test(){
-  document.querySelector('.logoutb').style.display="block"
+  document.querySelector('.logoutb').style.display="block";
  
-   }
+   };
  
 addEventListener('load', test);
+
 
 const checking = async () => {
     document.location.replace('/checking');
