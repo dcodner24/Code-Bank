@@ -30,7 +30,7 @@ router.get("/",ifLoggedIn, async (req, res) => {
       console.log(savings_accs);
 
       let tenYearBalance = finance.CI(4, 1, savings_accs[0].acc_balance, 10 );
-      tenYearBalance = helper.format_amount(tenYearBalance);
+      // tenYearBalance = helper.format_amount(tenYearBalance);
       console.log(tenYearBalance);
 
       res.render("savings",{
