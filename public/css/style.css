@@ -14,12 +14,13 @@ footer {
 }
 
 .transactions {
-    padding: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 .transaction-form {
-    padding: 5%;
-
+    max-width: 500px;
+    
 }
 
 .nav-custom {
