@@ -2,20 +2,21 @@
   {{#each accounts as |account|}}
   {{!-- account balance --}}
   {{#if account.is_savings}}
-  <div>
-  <h3>Account Balance</h3>
-  <h3>${{account.acc_balance}}</h3>
+  <div class="mx-2 mb-2">
+    <h3>Account Balance</h3>
+    <h3>${{account.acc_balance}}</h3>
   </div>
-  {{!-- {{else}}
-  <p>No Savings Account</p> --}}
-
   {{/if}}
-
   {{/each}}
+
+  <div class="mx-2 mb-2">
+    <h3>10 Year Potential Savings at 4% Yearly</h3>
+    <h3>{{tenYearBalance}}</h3>
+  </div>
 
   {{!-- list previous transactions --}}
 
- <div class="mx-2">
+  <div class="mx-2 mb-2">
     {{!-- creates row headers --}}
     <h3>Previous Transactions</h3>
 
@@ -67,3 +68,5 @@
       <button type="submit" class="btn btn-primary">Make Deposit</button>
     </form>
   </div>
+
+  <script src="/js/account.js"></script>

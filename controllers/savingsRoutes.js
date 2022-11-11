@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const { Account, User, Transaction } = require("../models");
 const ifLoggedIn= require("../utils/auth")
+const Finance = require('financejs');
+const finance = new Finance();
+const helper = require('../utils/helpers')
 
 
 
@@ -19,10 +22,20 @@ router.get("/",ifLoggedIn, async (req, res) => {
         include: [{ model: Account }],
       })
       const accounts = accounting.map((project) => project.get({ plain: true }));
+    
+      
+      
+      
+      let savings_accs = accounts.filter(account => account.is_savings == true);
+      console.log(savings_accs);
+
+      let tenYearBalance = finance.CI(4, 1, savings_accs[0].acc_balance, 10 );
+      tenYearBalance = helper.format_amount(tenYearBalance);
+      console.log(tenYearBalance);
 
       res.render("savings",{
         // layout: 'account',
-        transactions,accounts
+        transactions,accounts,tenYearBalance
         // Pass the logged in flag to the template
       }
     
