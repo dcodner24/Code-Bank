@@ -1,73 +1,80 @@
 <div>
-{{!-- account balance --}}
-<h1>Account Balance</h1>
-    {{#each accounts as |account|}}
+  {{#each accounts as |account|}}
+  {{!-- account balance --}}
+  {{#if account.is_savings}}
+  <h1>Account Balance</h1>
 
-{{#if account.is_savings}}
-
-<p> {{account.acc_balance}} </p>
-{{else}}
-<p>No Savings Account</p>
-
-{{/if}}
-    {{/each}}
-
-{{!-- list previous transactions --}}
-
-<div>
-    <h3>Previous Transactions</h3>
-    {{#each transactions as |transaction|}}
-    {{#if transaction.amount}}
-
-
-    <div>
-      {{!-- need transactions.id --}}
-      <p>{{transaction.transaction_id}}</p>
-      <p>{{transaction.amount}}</p>
-      <p>{{transaction.notes}}</p>
-      <p>{{transaction.payment_destination}}</p>
-    </div>
-          {{else}}
-<p>No transactions</p>
+  <p> {{account.acc_balance}} </p>
+  {{else}}
+  <p>No Savings Account</p>
 
   {{/if}}
-    {{/each}}
-</div>
 
-{{!-- make a payment --}}
+  {{/each}}
 
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Payment Amount</label>
-    <input type="text" class="form-control" placeholder="Amount">
+  {{!-- list previous transactions --}}
+
+  <div>
+    {{!-- creates row headers --}}
+    <h3>Previous Transactions</h3>
+    {{#if transaction}}
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Transaction ID</li>
+      <li class="list-group-item">Amount</li>
+      <li class="list-group-item">Notes</li>
+      <li class="list-group-item">Payment Destination</li>
+      {{/if}}
+
+      {{#each transactions as |transaction|}}
+      {{#if transaction.amount}}
+
+
+      <div>
+        <li class="list-group-item">{{transaction.transaction_id}}</li>
+        <li class="list-group-item">{{transaction.amount}}</li>
+        <li class="list-group-item">{{transaction.notes}}</li>
+        <li class="list-group-item">{{transaction.payment_destination}} </li>
+      </div>
+      {{else}}
+      <p>No transactions</p>
+      {{/if}}
+      {{/each}}
   </div>
 
-  <div class="form-group">
-    <label for="exampleFormControlSelect2">Choose Payment Destination</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2">
-      <option>Transfer to My Accounts</option>
-      <option>Transfer to Another User</option>
-    </select>
-  </div>
+  {{!-- make a payment --}}
 
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Payment Notes</label>
-    <input type="text" class="form-control" placeholder="Notes">
-  </div>
-</form>
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Payment Amount</label>
+      <input type="text" class="form-control" placeholder="Amount">
+    </div>
 
-{{!-- make a deposit --}}
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Choose Payment Destination</label>
+      <select multiple class="form-control" id="exampleFormControlSelect2">
+        <option>Transfer to My Accounts</option>
+        <option>Transfer to Another User</option>
+      </select>
+    </div>
 
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Deposit Amount</label>
-    <input type="text" class="form-control" placeholder="Amount">
-  </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Payment Notes</label>
+      <input type="text" class="form-control" placeholder="Notes">
+    </div>
+  </form>
 
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Deposit Notes</label>
-    <input type="text" class="form-control" placeholder="Notes">
-  </div>
-</form>
+  {{!-- make a deposit --}}
+
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Deposit Amount</label>
+      <input type="text" class="form-control" placeholder="Amount">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Deposit Notes</label>
+      <input type="text" class="form-control" placeholder="Notes">
+    </div>
+  </form>
 
 </div>
