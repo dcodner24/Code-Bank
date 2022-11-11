@@ -45,13 +45,22 @@ try {
 router.post("/login", async (req, res) => {
 try {
   const userLoginInfo= await User.findOne({ where: { email: req.body.email }})
-   
+
+
   if(!userLoginInfo){
     res.status(400).json({message: 'Incorrect email or password, please try again'})
     return
   }
+  console.log(req.body.password)
 
-  
+  const validPassword = await userLoginInfo.checkPassword(req.body.password);
+
+  if (!validPassword) {
+    res
+      .status(400)
+      .json({ message: 'Incorrect email or password, please try again' });
+    return;
+  }
   req.session.save(() => {
     req.session.user_id = userLoginInfo.user_id;
     req.session.email = userLoginInfo.email;

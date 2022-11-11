@@ -32,3 +32,8 @@ footer {
 .footer{
     background-color: var(--cb-green);
 }
+
+
+.logoutb{
+    display: none;
+}

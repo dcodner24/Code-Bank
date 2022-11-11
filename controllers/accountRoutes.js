@@ -12,12 +12,10 @@ router.get("/",ifLoggedIn, async (req, res) => {
   
       const users = accountData.map((project) => project.get({ plain: true }));
 
-
       const accounting= await Account.findAll({ where: { user_id: req.session.user_id } },{
         include: [{ model: Account }],
       })
       const accounts = accounting.map((project) => project.get({ plain: true }));
- console.log(accounts)
       res.render("account",{
         // layout: 'account',
         users,accounts
