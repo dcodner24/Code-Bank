@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="vh-100" lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -14,53 +14,51 @@
   <link rel="stylesheet" href="/css/jass.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 
   <title>{{title}}</title>
 </head>
 
 
 <body>
+  <div class="page">
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand justify-content-between nav-custom">
+        <a class="navbar-brand" href="/">
+          <img class="navbar-logo" src="/assets/logo.png">
+        </a>
+        <ul class="navbar-nav p-3">
+          <li class="nav-item">
+            <a class="nav-link logoutb" id="logout" href="#">Logout</a>
+          </li>
+        </ul>
 
-  <header>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand justify-content-between nav-custom">
-      <a class="navbar-brand" href="/">
-        <img class="navbar-logo" src="/assets/logo.png">
-      </a>
-      <ul class="navbar-nav p-3">
-        <li class="nav-item">
-          <a class="nav-link logoutb" id="logout" href="#">Logout</a>
-        </li>
-      </ul>
-
-    </nav>
-
-
-    <!-- Background image -->
-    <div class="banner">
-      <img class="banner-image" src="/assets/banner.png" alt="Page banner with quote">
-    </div>
-  </header>
+      </nav>
 
 
+      <!-- Background image -->
+      <div class="banner">
+        <img class="banner-image" src="/assets/banner.png" alt="Page banner with quote">
+      </div>
+    </header>
 
-  <!-- Conditionally render login or logout links -->
-  {{#if logged_in}}
-  {{!-- load account page --}}
-  {{{ body }}}
-  {{else}}
-  <main>
-    <!-- Render main login page -->
+
+
+    <!-- Conditionally render login or logout links -->
+    {{#if logged_in}}
+    {{!-- load account page --}}
     {{{ body }}}
-  </main>
-  {{/if}}
-
-
-
-  <footer>
+    {{else}}
+    <main>
+      <!-- Render main login page -->
+      {{{ body }}}
+    </main>
+    {{/if}}
+  </div>
+  {{!-- <footer>
     <div
-      class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 mt-4 fixed-bottom footer">
+      class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 footer fixed-bottom">
       <!-- Copyright -->
       <div class="text-white mb-3 mb-md-0">
         Copyright © 2022. All rights reserved.
@@ -84,7 +82,9 @@
       </div>
       <!-- Right -->
     </div>
-  </footer>
+  </footer> --}}
+
+
 
 
   <!-- Render script for logged in users only -->
@@ -98,5 +98,6 @@
   <script src="/js/logout.js"></script>
 
 </body>
+
 
 </html>

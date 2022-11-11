@@ -12,32 +12,33 @@
 {{/each}}
 
 {{!-- Checking and Savings cards --}}
-<div class="account-info">
-  {{#each accounts as |account|}}
-  {{#if account.is_checking}}
-  <div class="card" id="checking" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Checking Account</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Account ID: {{account.account_id}}</h6>
-      <p class="card-text">Current Balance: {{account.acc_balance}}</p>
+<div class="flex-row flex-row-md mt-1 mb-1">
+  <div class="account-info">
+    {{#each accounts as |account|}}
+    {{#if account.is_checking}}
+    <div class="card" id="checking" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Checking Account</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Account ID: {{account.account_id}}</h6>
+        <p class="card-text">Current Balance: {{account.acc_balance}}</p>
+      </div>
     </div>
+    {{/if}}
   </div>
-  {{/if}}
-</div>
 
-<div class="account-info">
-  {{#if account.is_savings}}
-  <div class="card" id='savings' style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Savings Account</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Account ID: {{account.account_id}}</h6>
-      <p class="card-text">Current Balance: {{account.acc_balance}}</p>
+  <div class="account-info">
+    {{#if account.is_savings}}
+    <div class="card" id='savings' style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Savings Account</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Account ID: {{account.account_id}}</h6>
+        <p class="card-text">Current Balance: {{account.acc_balance}}</p>
+      </div>
     </div>
+    {{/if}}
+    {{/each}}
   </div>
-  {{/if}}
-  {{/each}}
 </div>
-
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
   Add Account
@@ -60,7 +61,7 @@
         <input type="checkbox"></input>
 
         </form>
-      
+
 
       </div>
       <div class="modal-footer">

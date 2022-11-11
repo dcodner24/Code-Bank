@@ -46,6 +46,10 @@ const savings = async () => {
     document.location.replace('/savings');
 };
 
+if(document.querySelector('#checking')){
+    document.querySelector('#checking').addEventListener('click', checking)
+};
 
-document.querySelector('#checking').addEventListener('click', checking);
-document.querySelector('#savings').addEventListener('click', savings);
+if(document.querySelector('#savings')){
+    document.querySelector('#savings').addEventListener('click', savings)
+};
