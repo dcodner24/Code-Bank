@@ -21,7 +21,8 @@
 {{/each}};
 
 {{!-- Just added this, might be a better look (TONY) --}}
-{{!-- <div class="card" style="width: 40rem;">
+{{#each users as |user|}}
+<div class="card" style="width: 40rem;">
   <div class="card-header">
     Account Overview
   </div>
@@ -30,9 +31,10 @@
     <li class="list-group-item">Email: {{user.email}}</li>
     <li class="list-group-item">Date of Birth: {{user.dateOfBirth}}</li>
   </ul>
-</div> --}}
+</div>
+{{/each}}
 
-<!-- CSS only -->
+{{!-- <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 {{#each users as |user|}}
@@ -44,7 +46,7 @@
   </div>
 </div>
 {{/each}}
-{{{body}}}
+{{{body}}} --}}
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
