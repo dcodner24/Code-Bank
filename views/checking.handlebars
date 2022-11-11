@@ -16,25 +16,23 @@
   <div>
     {{!-- creates row headers --}}
     <h3>Previous Transactions</h3>
-    {{#if transaction}}
+    
     <ul class="list-group list-group-horizontal">
-      <li class="list-group-item">Transaction ID</li>
-      <li class="list-group-item">Amount</li>
-      <li class="list-group-item">Notes</li>
-      <li class="list-group-item">Payment Destination</li>
-      {{/if}}
+      <li class="list-group-item flex-fill">Transaction ID</li>
+      <li class="list-group-item flex-fill">Amount</li>
+      <li class="list-group-item flex-fill">Notes</li>
+      <li class="list-group-item flex-fill">Payment Destination</li>
+    </ul>
 
       {{#each transactions as |transaction|}}
       {{#if transaction.amount}}
 
         <ul class="list-group list-group-horizontal">
-          <li class="list-group-item">{{transaction.transaction_id}}</li>
-          <li class="list-group-item">{{transaction.amount}}</li>
-          <li class="list-group-item">{{transaction.notes}}</li>
-          <li class="list-group-item">{{transaction.payment_destination}} </li>
-      </div>
-      {{else}}
-      <p>No transactions</p>
+          <li class="list-group-item flex-fill flex-wrap">Transaction ID</li>
+          <li class="list-group-item flex-fill">{{transaction.amount}}</li>
+          <li class="list-group-item flex-fill">{{transaction.notes}}</li>
+          <li class="list-group-item flex-fill">{{transaction.payment_destination}} </li>
+      </ul>
       {{/if}}
       {{/each}}
   </div>

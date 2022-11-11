@@ -13,20 +13,13 @@ footer {
     width: 100%;
 }
 
-.transactions {
-    padding-left: 2%;
-    padding-right: 2%;
-}
+
 
 .transaction-form {
     max-width: 500px;
     
 }
 
-.list-group-item {
-    width: 100px;
-
-}
 
 .account-info {
     
@@ -55,4 +48,9 @@ footer {
 
 .footer{
     background-color: var(--cb-green);
+}
+
+
+#checking:hover, #savings:hover{
+    box-shadow: 2px 2px 4px #000000
 }
